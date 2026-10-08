@@ -12,11 +12,22 @@ function App() {
     )
   }
 
+  const onAddCounter = () => {
+    setCounts(prevCounts => [...prevCounts, 0]) 
+  }
+
   const total = counts.reduce((sum, current) => sum + current, 0)
 
   return (
     <div>
       <h1>총합: {total}</h1>
+      <button
+        onClick={
+          onAddCounter
+        }>
+          카운터 추가
+        </button>
+        
       {
         counts.map((count, index) => (
           <Counter
